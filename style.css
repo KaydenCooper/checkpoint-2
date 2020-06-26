@@ -1,0 +1,18 @@
+
+.bg-image{
+    background-image: url('https://image.freepik.com/free-vector/nature-scene-with-wooden-houses-edge-river_43633-5052.jpg');
+    background-size:cover;
+    background-position: top;
+
+}
+.img-size{
+    height: 51vh;
+}
+
+.font{
+    font-family: 'Press Start 2P', cursive;
+}
+
+.bg-gold{
+    background-color: rgb(224, 208, 58);
+}
