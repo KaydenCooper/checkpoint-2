@@ -50,23 +50,41 @@ function upgrade(input) {
          setMultiplier += upgradeObjs[input].multiplyer
          document.getElementById("factory").innerText = `${upgradeObjs.factory.quantity++}`
      }*/
+
+
     document.getElementById(`${input}`).innerText = `${upgradeObjs[input].quantity++}`
     setMultiplier += upgradeObjs[input].multiplyer
     gold -= upgradeObjs[input].price
     setGoldTimer += upgradeObjs[input].quantity * upgradeObjs[input].multiplyer / 3
+    if (input) {
+        document.getElementById(`${input}`).innerText = `${upgradeObjs[input].price *= 3}`
+    }
     draw()
     startInterval()
+
 }
-/*First create a method called collectAutoUpgrades, this will iterate over the automaticUpgrades, total the quantity of each automaticUpgrade times their multiplier, and add that value to the cheese resource. (See example below)
-We want this to happen automatically, so we will need to use setInterval(reference) to make sure this occurs every three seconds automatically, we can set this automatic invocation like so:
-function startInterval() {
-    collectionInterval = setInterval(collectAutoUpgrades, 3000);
-} */
+
+function buttonDisable() {
+
+    if (gold < upgradeObjs.goldpan.price) {
+        document.getElementById("gButton").setAttribute('disabled', 'true')
+    } else { document.getElementById("gButton").removeAttribute('disabled') }
+    if (gold < upgradeObjs.shovel.price) {
+        document.getElementById("sButton").setAttribute('disabled', 'true')
+    } else { document.getElementById("sButton").removeAttribute('disabled') }
+    if (gold < upgradeObjs.dredge.price) {
+        document.getElementById("dButton").setAttribute('disabled', 'true')
+    } else { document.getElementById("dButton").removeAttribute('disabled') }
+    if (gold < upgradeObjs.factory.price) {
+        document.getElementById("fButton").setAttribute('disabled', 'true')
+    } else { document.getElementById("fButton").removeAttribute('disabled') }
+
+}
+
 function startInterval() {
     setInterval(autoUpgrade, 3000);
 }
 function autoUpgrade() {
-    debugger
     if ("dredge") {
         gold += upgradeObjs.dredge.quantity * upgradeObjs.dredge.multiplyer
 
@@ -95,7 +113,7 @@ function draw() {
     document.getElementById("fPrice").innerText = `${upgradeObjs.factory.price}`
     document.getElementById("multiplier").innerText = `${setMultiplier}`
     document.getElementById("gps").innerText = `${setGoldTimer}`
-
+    buttonDisable()
 
 
 
