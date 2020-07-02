@@ -18,7 +18,7 @@
 <body class="bg-image font">
     <header class="container-fluid">
         <div class="row text-center justify-content-center">
-            <div class="col-12 col-md-5 m-3 py-3 bg-sign text-gold">
+            <div class="col-12 col-md-5 py-3 bg-sign text-gold">
                 <h1><u> GOLD MINER</u></h1>
             </div>
         </div>
@@ -28,18 +28,18 @@
 
 
     <main class="container-fluid">
-        <div class="row">
-            <div class=" col-lg-3 col-md-6 col-12 text-gold text-left p-3 ml-md-3 bg-sign">
-                <h1 class="mb-4"><u>INVENTORY</u></h1>
-                <div class="row">
-                    <div class="col-6 col-md-6">
-                        <h3>GOLD: </h3>
-                        <h5>Goldpan: </h5>
-                        <h5>Shovel: </h5>
-                        <h5>Dredge: </h5>
-                        <h5>Factory: </h5>
+        <div class="row p-1">
+            <div class=" col-lg-3 col-md-12 col-12 text-gold text-left p-3 ml-md-3 bg-sign">
+                <h1 class="mb-3"><u>INVENTORY</u></h1>
+                <div class="row p-1">
+                    <div class="col-6 paper p-2 text-center text-dark col-md-6">
+                        <h4 class="m-2">GOLD </h4>
+                        <p class="m-2">GOLDPAN </p>
+                        <p class="m-2">SHOVEL </p>
+                        <p class="m-2">DREDGE </p>
+                        <p class="m-2">FACTORY </p>
                     </div>
-                    <div class="col-6 col-lg-3 col-md-6 text-center">
+                    <div class="col-6 col-lg-6 paper  p-2 text-dark col-md-6 text-center">
                         <div class=" my-2" id="gold"></div>
                         <div class=" my-2" id="goldpan"></div>
                         <div class=" my-2" id="shovel"></div>
@@ -49,24 +49,24 @@
                 </div>
 
             </div>
-            <div class=" col-lg-2 col-md-6 col-12 ml-1 p-3 text-center text-gold bg-sign">
+            <div class=" col-lg-2 col-md-12 col-12 ml-1 p-3 text-center text-gold bg-sign">
                 <h1><u>STORE</u></h1>
-                <button id="gButton" type="button" class="btn btn-outline-warning text-gold my-1 "
-                    onclick="upgrade('goldpan')">GOLDPAN
-                    $<span id="gPrice"></span></button>
-                <button id="sButton" type="button" class="btn btn-outline-warning text-gold my-1 "
-                    onclick="upgrade('shovel')">SHOVEL
-                    $<span id="sPrice"></span></button>
-                <button id="dButton" type="button" class="btn btn-outline-warning text-gold my-1 "
-                    onclick="upgrade('dredge')">DREDGE
-                    $<span id="drPrice"></span></button>
-                <button id="fButton" type="button" class="btn btn-outline-warning text-gold my-1 "
-                    onclick="upgrade('factory')">FACTORY
-                    $<span id="fPrice"></span></button>
+                <div class="paper py-4">
+                    <button id="gButton" type="button" class="btn btn-outline-warning text-dark my-1 "
+                        onclick="upgrade('goldpan')">GOLDPAN
+                        $<span id="gPrice"></span></button>
+                    <button id="sButton" type="button" class="btn btn-outline-warning text-dark my-1 "
+                        onclick="upgrade('shovel')">SHOVEL
+                        $<span id="sPrice"></span></button>
+                    <button id="dButton" type="button" class="btn btn-outline-warning text-dark my-1 "
+                        onclick="upgrade('dredge')">DREDGE
+                        $<span id="drPrice"></span></button>
+                    <button id="fButton" type="button" class="btn btn-outline-warning text-dark my-1 "
+                        onclick="upgrade('factory')">FACTORY
+                        $<span id="fPrice"></span></button>
+                </div>
             </div>
-            <div class="col-12 col-md-7">
 
-            </div>
 
         </div>
 
@@ -77,19 +77,22 @@
 
     <footer class="container-fluid">
 
-        <div class="row justify-content-end">
+        <div class="row">
             <div class="col-8 pl-0">
                 <div class="row ml-3">
-                    <div class="col-12 col-md-6 col-lg-6  mt-2 pl-4 text-gold p-1  bg-sign ">
+                    <div class="col-12 col-md-6 col-lg-7 pl-4 text-gold p-2  bg-sign">
+
                         <h5 class="my-1">Multiplier x <span id="multiplier"></span></h5>
                         <h5 class="my-1">GOLD/s: <span id="gps"></span></h5>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <img class="img-fluid img-size" onclick="mine()" src="pngflow.com.png" alt="miner-img">
+                <img class="img-fluid img-size click" onclick="mine()" src="pngflow.com.png" alt="miner-img">
+
             </div>
         </div>
+
 
 
     </footer>
@@ -97,9 +100,8 @@
 
 
 
-
-
-
+    <audio id="button-sound" src="ka-ching.mp3"></audio>
+    <audio id="mine-sound" src="mine-sound.mp3"></audio>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="app.js"></script>

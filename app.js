@@ -2,6 +2,7 @@ let gold = 0;
 let setMultiplier = 0
 let setGoldTimer = 0
 
+
 let upgradeObjs = {
     goldpan: {
         price: 50,
@@ -27,7 +28,7 @@ let upgradeObjs = {
 
 
 function mine() {
-
+    document.getElementById("mine-sound").play()
     if (setMultiplier == 0) {
         gold++
     } else if (setMultiplier > 0) {
@@ -51,7 +52,7 @@ function upgrade(input) {
          document.getElementById("factory").innerText = `${upgradeObjs.factory.quantity++}`
      }*/
 
-
+    document.getElementById("button-sound").play()
     document.getElementById(`${input}`).innerText = `${upgradeObjs[input].quantity++}`
     setMultiplier += upgradeObjs[input].multiplyer
     gold -= upgradeObjs[input].price
@@ -114,8 +115,6 @@ function draw() {
     document.getElementById("multiplier").innerText = `${setMultiplier}`
     document.getElementById("gps").innerText = `${setGoldTimer}`
     buttonDisable()
-
-
 
 }
 
