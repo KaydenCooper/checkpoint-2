@@ -16,7 +16,7 @@
 border-radius: 15px;
 }
 .img-size{
-    height: 49vh;
+    height: 52vh;
 }
 
 .font{
@@ -28,4 +28,18 @@ border-radius: 15px;
 }
 .click{
     cursor: pointer;
+}
+
+@media only screen and (min-width: 500px) {
+    .position{
+        position: absolute;
+        bottom: -175px; 
+        left: -75px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .position{
+        position: relative;
+    }
 }
