@@ -56,12 +56,15 @@ function upgrade(input) {
     document.getElementById(`${input}`).innerText = `${upgradeObjs[input].quantity++}`
     setMultiplier += upgradeObjs[input].multiplyer
     gold -= upgradeObjs[input].price
-    setGoldTimer += upgradeObjs[input].quantity * upgradeObjs[input].multiplyer / 3
+    debugger
+    if (input == "dredge" || input == "factory") {
+        setGoldTimer = upgradeObjs.dredge.quantity * upgradeObjs.dredge.multiplyer / 3 + upgradeObjs.factory.quantity * upgradeObjs.factory.multiplyer / 3
+    }
     if (input) {
-        document.getElementById(`${input}`).innerText = `${upgradeObjs[input].price *= 3}`
+        document.getElementById(`${input}`).innerText = `${upgradeObjs[input].price *= 2}`
     }
     draw()
-    startInterval()
+
 
 }
 
@@ -119,5 +122,5 @@ function draw() {
 }
 
 
-
+startInterval()
 draw()
